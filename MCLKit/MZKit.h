@@ -8,12 +8,18 @@
 
 #import <Foundation/Foundation.h>
 #import  <UIKit/UIKit.h>
+
+
 @interface MZKit : NSObject
-+ (MZKit *(^)(NSString*))mzKit;
-- (MZKit *(^)(NSString*))text;
-- (MZKit *(^)(UIColor *))textColor;
+@property(nonatomic,strong)id someObj;
+
++ (MZKit*(^)())initMz;
+- (MZKit *(^)())Label;
+- (MZKit *(^)())Button;
+- (MZKit *(^)())ImageView;
+- (MZKit *(^)())TextField;
+- (MZKit *(^)())Segment;
 
 - (id(^)())end;
-
 
 @end

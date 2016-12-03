@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "MZKit.h"
+#import "MZKit+Config.h"
 @interface ViewController ()
 
 @end
@@ -19,11 +20,17 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     
-   UILabel *lbel = MZKit.mzKit(@"label").text(@"nihao").textColor([UIColor redColor]).end();
+//    UILabel *label =  MZKit.initMz().Label().m_frame(CGRectMake(10, 100, 100, 100)).end();
+    
+    UILabel *label =  MZKit.initMz().Label().m_frame(CGRectMake(10, 100, 100, 100)).m_text(@"xiaoming").end();
+
+    
+//    label.backgroundColor = [UIColor redColor];
     
     
-    [self.view addSubview:lbel];
     
+    
+    [self.view addSubview:label];
     
     
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75A2F0261DF2B20500F4E759 /* MZKit+Config.m in Sources */ = {isa = PBXBuildFile; fileRef = 75A2F0251DF2B20500F4E759 /* MZKit+Config.m */; };
 		75FD4B7B1DF177AD004A177C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FD4B7A1DF177AD004A177C /* main.m */; };
 		75FD4B7E1DF177AD004A177C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FD4B7D1DF177AD004A177C /* AppDelegate.m */; };
 		75FD4B811DF177AD004A177C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FD4B801DF177AD004A177C /* ViewController.m */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		75A2F0241DF2B20500F4E759 /* MZKit+Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MZKit+Config.h"; sourceTree = "<group>"; };
+		75A2F0251DF2B20500F4E759 /* MZKit+Config.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MZKit+Config.m"; sourceTree = "<group>"; };
 		75FD4B761DF177AD004A177C /* MCLKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MCLKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75FD4B7A1DF177AD004A177C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		75FD4B7C1DF177AD004A177C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -110,6 +113,8 @@
 				75FD4B801DF177AD004A177C /* ViewController.m */,
 				75FD4BAC1DF17811004A177C /* MZKit.h */,
 				75FD4BAD1DF17811004A177C /* MZKit.m */,
+				75A2F0241DF2B20500F4E759 /* MZKit+Config.h */,
+				75A2F0251DF2B20500F4E759 /* MZKit+Config.m */,
 				75FD4B821DF177AD004A177C /* Main.storyboard */,
 				75FD4B851DF177AD004A177C /* Assets.xcassets */,
 				75FD4B871DF177AD004A177C /* LaunchScreen.storyboard */,
@@ -282,6 +287,7 @@
 				75FD4B811DF177AD004A177C /* ViewController.m in Sources */,
 				75FD4BAE1DF17811004A177C /* MZKit.m in Sources */,
 				75FD4B7E1DF177AD004A177C /* AppDelegate.m in Sources */,
+				75A2F0261DF2B20500F4E759 /* MZKit+Config.m in Sources */,
 				75FD4B7B1DF177AD004A177C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -521,6 +527,7 @@
 				75FD4BA51DF177AD004A177C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		75FD4BA61DF177AD004A177C /* Build configuration list for PBXNativeTarget "MCLKitTests" */ = {
 			isa = XCConfigurationList;
@@ -529,6 +536,7 @@
 				75FD4BA81DF177AD004A177C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		75FD4BA91DF177AD004A177C /* Build configuration list for PBXNativeTarget "MCLKitUITests" */ = {
 			isa = XCConfigurationList;
@@ -537,6 +545,7 @@
 				75FD4BAB1DF177AD004A177C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

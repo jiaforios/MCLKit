@@ -8,53 +8,70 @@
 
 #import "MZKit.h"
 #import <objc/runtime.h>
-static char objectkey;
-static char objectkeytype;
-
-static MZKit *mzManger = nil;
 @implementation MZKit
 
-+ (MZKit *(^)(NSString*))mzKit
++ (MZKit*(^)())initMz
 {
-    mzManger = [MZKit new];
-    return ^(NSString *type){
-    
-        if ([type isEqualToString:@"label"]) {
-            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 100, 100, 100)];
-            objc_setAssociatedObject(mzManger, &objectkey, label, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-            objc_setAssociatedObject(mzManger, &objectkeytype, type, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        }
-        return mzManger;
-    };
-}
+//    mzManger = [MZKit new];
 
-- (MZKit *(^)(NSString*))text
-{
-    return ^(NSString *text){
-        NSString *type = objc_getAssociatedObject(mzManger, &objectkeytype);
-        UILabel *label  = objc_getAssociatedObject(mzManger, &objectkey);
-        label.text = text;
-        return mzManger;
+    return ^(){
+        return [MZKit new];
     };
 }
 
 
-- (MZKit *(^)(UIColor *))textColor
+- (MZKit *(^)())Label
 {
-    return ^(UIColor *color){
-    
-        NSString *type = objc_getAssociatedObject(mzManger, &objectkeytype);
-        UILabel *label  = objc_getAssociatedObject(mzManger, &objectkey);
-        label.textColor = color;
-        
-        return mzManger;
+    return ^(){
+        UILabel *label = [[UILabel alloc] init];
+        self.someObj = label;
+        return self;
     };
 }
+
+-(MZKit *(^)())Button
+{
+    return ^(){
+        UIButton *label = [[UIButton alloc] init];
+        return self;
+    };
+
+}
+
+
+-(MZKit *(^)())ImageView
+{
+    return ^(){
+        UIImageView *label = [[UIImageView alloc] init];
+        return self;
+    };
+
+}
+
+-(MZKit *(^)())TextField
+{
+    return ^(){
+        UITextField *label = [[UITextField alloc] init];
+//        objc_setAssociatedObject(self, &objectkey, label, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        return self;
+    };
+}
+
+-(MZKit *(^)())Segment
+{
+    return ^(){
+        UISegmentedControl *label = [[UISegmentedControl alloc] init];
+//        objc_setAssociatedObject(mzManger, &objectkey, label, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        return self;
+    };
+}
+
+
 
 - (id(^)())end
 {
     return ^{
-        return objc_getAssociatedObject(mzManger, &objectkey);
+        return self.someObj;
     };
 }
 

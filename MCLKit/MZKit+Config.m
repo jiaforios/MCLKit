@@ -18,7 +18,6 @@
         funcstr = [funcstr substringFromIndex:[funcstr rangeOfString:@"m_"].length];
         SEL sel = [self creatSetterWithPropertyName:funcstr];
         if ([self.someObj respondsToSelector:sel]) {
-//            [self.someObj setValue:[NSValue valueWithCGRect:frame] forKey:funcstr];
             IMP imp = [self.someObj methodForSelector:sel];
             void (*func)(id, SEL, CGRect ) = (void *)imp;
             func(self.someObj, sel, frame);
@@ -70,7 +69,6 @@
 }
 
 - (SEL)creatSetterWithPropertyName:(NSString *) propertyName{
-//    propertyName = propertyName.capitalizedString;
     propertyName = [NSString stringWithFormat:@"set%@:", propertyName];
     return NSSelectorFromString(propertyName);
 }

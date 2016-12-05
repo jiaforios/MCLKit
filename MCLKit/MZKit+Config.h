@@ -11,10 +11,12 @@
 #define MZ(a) MZKit *(^)(a)
 
 @interface MZKit (Config)
+
 - (MZKit *(^)(CGRect))m_Frame;
 - (MZKit *(^)(NSString*))m_Text;
 - (MZKit *(^)(UIColor *))m_TextColor;
 - (MZKit *(^)(UIColor *))m_BackgroundColor;
 
+- (MZKit *(^)(id,SEL,UIControlEvents))m_Tartget;
 
 @end

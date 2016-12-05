@@ -13,6 +13,7 @@
 
 - (MZKit *(^)(CGRect))m_Frame
 {
+
     return ^(CGRect frame){
         NSString *funcstr = [NSString stringWithUTF8String:sel_getName(_cmd)];
         funcstr = [funcstr substringFromIndex:[funcstr rangeOfString:@"m_"].length];
@@ -32,10 +33,12 @@
 {
     return ^(NSString *text){
         
-        self.selAction(sel_getName(_cmd),text);
+            self.selAction(sel_getName(_cmd),text);        
         return self;
     };
 }
+
+
 
 - (MZKit *(^)(const char *,id))selAction
 {
@@ -47,6 +50,9 @@
             IMP imp = [self.someObj methodForSelector:sel];
             void (*func)(id, SEL, id ) = (void *)imp;
             func(self.someObj, sel, obj);
+        }else
+        {
+            NSLog(@" 不支持的方法%@",funcstr);
         }
         return self;
     };
@@ -67,6 +73,26 @@
         return self;
     };
 }
+
+
+- (MZKit *(^)(id,SEL,UIControlEvents))m_Tartget
+{
+    return ^(id obj,SEL sel,UIControlEvents event){
+    
+        SEL sel0 = @selector(addTarget:action:forControlEvents:);
+        
+        if ([self.someObj respondsToSelector:sel0])
+        {
+            IMP imp = [self.someObj methodForSelector:sel0];
+            
+            void (*func)(id, SEL, id,SEL,UIControlEvents) = (void *)imp;
+            func(self.someObj, sel0,obj,sel,event);
+            
+        }
+        return self;
+    };
+}
+
 
 - (SEL)creatSetterWithPropertyName:(NSString *) propertyName{
     propertyName = [NSString stringWithFormat:@"set%@:", propertyName];

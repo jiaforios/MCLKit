@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import  <UIKit/UIKit.h>
+#define MZLog(str) NSLog(@"%s:%@",__func__,str)
 
 @interface MZKit : NSObject
 @property(nonatomic,strong)id someObj;

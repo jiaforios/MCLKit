@@ -9,7 +9,6 @@
 #import "MZKit.h"
 #import <objc/runtime.h>
 
-#define MZLog(str) NSLog(@"%s:%@",__func__,str)
 
 @implementation MZKit
 static MZKit *manger = nil;

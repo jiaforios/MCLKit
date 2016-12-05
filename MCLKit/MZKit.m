@@ -8,66 +8,63 @@
 
 #import "MZKit.h"
 #import <objc/runtime.h>
+
+#define MZLog(str) NSLog(@"%s:%@",__func__,str)
+
 @implementation MZKit
-
-+ (MZKit*(^)())initMz
+static MZKit *manger = nil;
++ (MZKit*(^)(Class))initCls
 {
-//    mzManger = [MZKit new];
-
-    return ^(){
-        return [MZKit new];
+    return ^(Class cls){
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
+            manger = [MZKit new];
+        });
+        manger.someObj = [[cls alloc] init];
+        return manger;
     };
 }
 
 
-- (MZKit *(^)())Label
+-(MZKit *(^)(id, int))addTo
 {
-    return ^(){
-        UILabel *label = [[UILabel alloc] init];
-        self.someObj = label;
+    return ^(id supObj,int tag){
+    
+        if ([supObj respondsToSelector:@selector(addSubview:)]) {
+            [supObj performSelector:@selector(addSubview:) withObject:self.someObj];
+            if ([self.someObj respondsToSelector:@selector(setTag:)]) {
+                IMP imp = [self.someObj methodForSelector:@selector(setTag:)];
+                void(*func)(id,SEL,int) = (void *)imp;
+                func(self.someObj,@selector(setTag:),tag);
+            }else
+            {
+                MZLog(@"not support setTag");
+            }
+            
+        }else
+        {
+            MZLog(@"not support addSubView");
+        }
+        
         return self;
     };
 }
 
--(MZKit *(^)())Button
++ (id (^)(id,int))fromTag
 {
-    return ^(){
-        UIButton *label = [[UIButton alloc] init];
-        return self;
-    };
-
-}
-
-
--(MZKit *(^)())ImageView
-{
-    return ^(){
-        UIImageView *label = [[UIImageView alloc] init];
-        return self;
-    };
-
-}
-
--(MZKit *(^)())TextField
-{
-    return ^(){
-        UITextField *label = [[UITextField alloc] init];
-//        objc_setAssociatedObject(self, &objectkey, label, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        return self;
+    return ^(id supObj,int tag){
+       __block id targetObj;
+        SEL sel = @selector(viewWithTag:);
+        if ([supObj respondsToSelector:sel]) {
+            
+            IMP imp = [supObj methodForSelector:sel];
+            id(*func)(id,SEL,int) = (void *)imp;
+           targetObj = func(supObj,sel,tag);
+            
+        }
+        return targetObj;
     };
 }
-
--(MZKit *(^)())Segment
-{
-    return ^(){
-        UISegmentedControl *label = [[UISegmentedControl alloc] init];
-//        objc_setAssociatedObject(mzManger, &objectkey, label, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        return self;
-    };
-}
-
-
-
 - (id(^)())end
 {
     return ^{

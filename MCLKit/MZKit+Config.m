@@ -21,7 +21,6 @@
             IMP imp = [self.someObj methodForSelector:sel];
             void (*func)(id, SEL, CGRect ) = (void *)imp;
             func(self.someObj, sel, frame);
-            
         }
         return self;
     };
@@ -76,7 +75,6 @@
 - (MZKit *(^)(UIColor *))m_textColor
 {
     return ^(UIColor *color){
-
         return self;
     };
 }
@@ -84,6 +82,7 @@
 -(MZKit *(^)(UIColor *))m_backgroundColor
 {
     return ^(UIColor *color){
+        
         return self;
     };
 }

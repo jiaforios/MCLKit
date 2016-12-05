@@ -25,7 +25,6 @@ static MZKit *manger = nil;
     };
 }
 
-
 -(MZKit *(^)(id, int))addTo
 {
     return ^(id supObj,int tag){
@@ -40,12 +39,10 @@ static MZKit *manger = nil;
             {
                 MZLog(@"not support setTag");
             }
-            
         }else
         {
             MZLog(@"not support addSubView");
         }
-        
         return self;
     };
 }

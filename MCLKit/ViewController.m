@@ -19,13 +19,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    UILabel *label  = MZKit.initCls([UILabel class]).m_Frame(CGRectMake(10, 100, 100, 100)).m_Text(@"xiaoming").m_TextColor([UIColor redColor]).addTo(self.view,10).end();
+    MZKit.initCls([UILabel class]).m_Frame(CGRectMake(10, 100, 100, 100)).m_Text(@"xiaoming").m_TextColor([UIColor redColor]).addTo(self.view,10).end();
 
-//    UILabel *lbel = MZKit.fromTag(self.view,10);
+     MZKit.configWithTag(self.view,10).m_BackgroundColor([UIColor blueColor]).end();
     
-//    NSLog(@"tag = %d",lbel.tag);
 
-    
 }
 
 

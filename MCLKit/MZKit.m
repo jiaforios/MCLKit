@@ -47,21 +47,36 @@ static MZKit *manger = nil;
     };
 }
 
-+ (id (^)(id,int))fromTag
+
++ (MZKit * (^)(id,int))configWithTag
 {
     return ^(id supObj,int tag){
-       __block id targetObj;
+       __block MZKit * weakManger = manger;
         SEL sel = @selector(viewWithTag:);
         if ([supObj respondsToSelector:sel]) {
-            
             IMP imp = [supObj methodForSelector:sel];
             id(*func)(id,SEL,int) = (void *)imp;
-           targetObj = func(supObj,sel,tag);
-            
+            weakManger.someObj = func(supObj,sel,tag);
+        }
+        return manger;
+    };
+}
+
++ (id (^)(id,int))objFromTag
+{
+    return ^(id supObj,int tag){
+        __block id targetObj;
+        
+        SEL sel = @selector(viewWithTag:);
+        if ([supObj respondsToSelector:sel]) {
+            IMP imp = [supObj methodForSelector:sel];
+            id(*func)(id,SEL,int) = (void *)imp;
+            targetObj = func(supObj,sel,tag);
         }
         return targetObj;
     };
 }
+
 - (id(^)())end
 {
     return ^{

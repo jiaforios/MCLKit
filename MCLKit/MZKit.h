@@ -27,14 +27,27 @@
 
 
 - (MZKit *(^)(id ,int ))addTo;
+/*
+ * id  父视图
+ * int 子视图 tag 值
+ * 直接返回结果，需要继续配置
+ *
+ */
 
-+ (id(^)(id ,int))fromTag;
++ (MZKit *(^)(id ,int))configWithTag;
+
+/*
+ * id  父视图
+ * int 子视图 tag 值
+ * 直接返回结果，不需要继续配置
+ */
+
++ (id (^)(id,int))objFromTag;
 
 /*
  * 结束标志 返回指定类型
  *
  */
-
 
 - (id(^)())end;
 

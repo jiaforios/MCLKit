@@ -69,44 +69,6 @@
     };
 }
 
-
-/*
-- (void)funcStr:(NSString *)str andObj:(id)obj resultBlock:(void(^)(SEL))resBlock
-{
-    while ([[obj class] isSubclassOfClass:[NSObject class]]) {
-        NSLog(@"%@",[obj class]);
-        unsigned int count = 0;
-        objc_property_t *propertys = class_copyPropertyList([self.someObj class], &count);
-        for (int i = 0; i<count; i++) {
-            objc_property_t property = propertys[i];
-            const char *name = property_getName(property);
-            NSString *ocName = [NSString stringWithUTF8String:name];
-            if ([str containsString:ocName]) {
-                SEL sel =  [self creatSetterWithPropertyName:ocName];
-                if ([self.someObj respondsToSelector:sel]) {
-                    resBlock?resBlock(sel):nil;
-                    free(propertys);
-                    return;
-                }else
-                {
-                    resBlock?resBlock(nil):nil;
-                }
-            }
-            
-        }
-        obj = [obj superclass];
-    }
-}
- 
-- (void)selAction:(SEL)sel and:(id)obj
-{
-    IMP imp = [self.someObj methodForSelector:sel];
-    void (*func)(id, SEL, id ) = (void *)imp;
-    func(self.someObj, sel, obj);
-}
- 
- */
-
 - (SEL)creatSetterWithPropertyName:(NSString *) propertyName{
 //    propertyName = propertyName.capitalizedString;
     propertyName = [NSString stringWithFormat:@"set%@:", propertyName];

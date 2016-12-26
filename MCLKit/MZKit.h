@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import  <UIKit/UIKit.h>
 #define MZLog(str) NSLog(@"%s:%@",__func__,str)
-
+#define t_color(a)     [UIColor a]
 @interface MZKit : NSObject
 @property(nonatomic,strong)id someObj;
 
@@ -49,6 +49,9 @@
  * 结束标志 返回指定类型
  *
  */
+
+
++ (id(^)(id,...))configBlock;
 
 - (id(^)())end;
 

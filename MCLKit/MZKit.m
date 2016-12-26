@@ -76,6 +76,28 @@ static MZKit *manger = nil;
     };
 }
 
++ (id (^)(id, ...))configBlock
+{
+    
+    return ^(id obj,...){
+    
+        va_list args;
+        va_start(args, obj);
+        if (obj) {
+            
+            id other;
+            NSLog(@"%@",NSStringFromClass([obj class]));
+
+            while ((other = va_arg(args, id))) {
+                NSLog(@"%@",NSStringFromClass([other class]));
+            }
+        }
+        va_end(args);
+        return manger;
+    };
+}
+
+
 - (id(^)())end
 {
     return ^{

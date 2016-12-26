@@ -19,11 +19,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    /*
      MZKit.initCls([UILabel class]).m_Frame(CGRectMake(10, 100, 100, 100)).m_Text(@"xiaoming").m_TextColor([UIColor redColor]).addTo(self.view,10).m_Tartget(self,@selector(makeTest:),UIControlEventTouchUpInside).end();
     
      MZKit.configWithTag(self.view,10).m_BackgroundColor([UIColor blueColor]).end();
-
     
+    */
+    
+    MZKit.configBlock(t_color(redColor),@"textstr",nil);
+    
+    
+
 }
 
 
@@ -31,7 +37,6 @@
 {
     NSLog(@"点击事件");
     MZKit.configWithTag(self.view,10).m_BackgroundColor([UIColor redColor]).end();
-
     
 }
 

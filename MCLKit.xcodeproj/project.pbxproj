@@ -17,6 +17,7 @@
 		75FD4B941DF177AD004A177C /* MCLKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FD4B931DF177AD004A177C /* MCLKitTests.m */; };
 		75FD4B9F1DF177AD004A177C /* MCLKitUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FD4B9E1DF177AD004A177C /* MCLKitUITests.m */; };
 		75FD4BAE1DF17811004A177C /* MZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FD4BAD1DF17811004A177C /* MZKit.m */; };
+		95D4407E1E1205EA00EE7E59 /* UIColor+ColorType.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D4407D1E1205EA00EE7E59 /* UIColor+ColorType.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		75FD4BA01DF177AD004A177C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		75FD4BAC1DF17811004A177C /* MZKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZKit.h; sourceTree = "<group>"; };
 		75FD4BAD1DF17811004A177C /* MZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZKit.m; sourceTree = "<group>"; };
+		95D4407C1E1205EA00EE7E59 /* UIColor+ColorType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ColorType.h"; sourceTree = "<group>"; };
+		95D4407D1E1205EA00EE7E59 /* UIColor+ColorType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ColorType.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +118,8 @@
 				75FD4BAD1DF17811004A177C /* MZKit.m */,
 				75A2F0241DF2B20500F4E759 /* MZKit+Config.h */,
 				75A2F0251DF2B20500F4E759 /* MZKit+Config.m */,
+				95D4407C1E1205EA00EE7E59 /* UIColor+ColorType.h */,
+				95D4407D1E1205EA00EE7E59 /* UIColor+ColorType.m */,
 				75FD4B821DF177AD004A177C /* Main.storyboard */,
 				75FD4B851DF177AD004A177C /* Assets.xcassets */,
 				75FD4B871DF177AD004A177C /* LaunchScreen.storyboard */,
@@ -289,6 +294,7 @@
 				75FD4B7E1DF177AD004A177C /* AppDelegate.m in Sources */,
 				75A2F0261DF2B20500F4E759 /* MZKit+Config.m in Sources */,
 				75FD4B7B1DF177AD004A177C /* main.m in Sources */,
+				95D4407E1E1205EA00EE7E59 /* UIColor+ColorType.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

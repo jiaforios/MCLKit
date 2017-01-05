@@ -8,8 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import  <UIKit/UIKit.h>
+#import "UIColor+ColorType.h"
 #define MZLog(str) NSLog(@"%s:%@",__func__,str)
-#define t_color(a)     [UIColor a]
+#define t_color(c)   [UIColor Color:c type:Text_Color]
+
+#define bg_color(c)   [UIColor Color:c type:Bg_Color]
+
 @interface MZKit : NSObject
 @property(nonatomic,strong)id someObj;
 

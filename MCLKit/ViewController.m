@@ -26,8 +26,11 @@
     
     */
     
-    MZKit.configBlock(t_color(redColor),@"textstr",nil);
     
+    
+    MZKit.configBlock(t_color(redColor),@"textstr",bg_color(blueColor),nil);
+        
+
     
 
 }

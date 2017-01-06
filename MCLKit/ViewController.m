@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "MZKit.h"
 #import "MZKit+Config.h"
+#import "MZUIKit.h"
 @interface ViewController ()
 
 @end
@@ -26,14 +27,50 @@
     
     */
     
+//    configdata(...) = @{@"text_color":@"",@"background_color":@""};
     
     
-    MZKit.configBlock(t_color(redColor),@"textstr",bg_color(blueColor),nil);
+    
+//    button.configData = configdata;
+    
+    
+//    MZKit.configBlock(t_color(redColor),@"textstr",bg_color(blueColor),nil);
+    
+//  UIButton *btn =  [buton configclok:(NSDictionary *dic){
+//    
+//      dic = @{Alloc:[UIButton alloc],
+//              tc: [UIColor redcolor],
+//             bgc: [UIColor redcolor]
+//            };
+//  }];
+    
+    
+//    UILabel *label;
+//    label.textAlignment
         
 
     
+     [MZUIKit configDataBlock:^NSDictionary *{
+        
+        return  @{ALLOC:CLASS(UILabel),
+                  BGC:[UIColor redColor],
+                  TC:[UIColor blueColor],
+                  TXT:@"测试数据",
+                  TAMT:NUM(NSTextAlignmentLeft),
+                  FT:[UIFont systemFontOfSize:30],
+                  SUPERVIEW:self.view};
+         
 
+         
+//         return TEMPLATE_LABEL(redColor, blueColor, @"测试",NSTextAlignmentLeft, 30);
+         
+         
+         
+    }];
+
+    
 }
+
 
 
 - (void)makeTest:(UIButton *)sender

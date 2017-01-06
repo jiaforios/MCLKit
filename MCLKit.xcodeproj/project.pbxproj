@@ -18,6 +18,8 @@
 		75FD4B9F1DF177AD004A177C /* MCLKitUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FD4B9E1DF177AD004A177C /* MCLKitUITests.m */; };
 		75FD4BAE1DF17811004A177C /* MZKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 75FD4BAD1DF17811004A177C /* MZKit.m */; };
 		95D4407E1E1205EA00EE7E59 /* UIColor+ColorType.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D4407D1E1205EA00EE7E59 /* UIColor+ColorType.m */; };
+		95D9A9261E1F389A00CEECEE /* MZView.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D9A9251E1F389A00CEECEE /* MZView.m */; };
+		95D9A9291E1F38E200CEECEE /* MZUIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D9A9281E1F38E200CEECEE /* MZUIKit.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,11 @@
 		75FD4BAD1DF17811004A177C /* MZKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZKit.m; sourceTree = "<group>"; };
 		95D4407C1E1205EA00EE7E59 /* UIColor+ColorType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ColorType.h"; sourceTree = "<group>"; };
 		95D4407D1E1205EA00EE7E59 /* UIColor+ColorType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ColorType.m"; sourceTree = "<group>"; };
+		95D9A9241E1F389A00CEECEE /* MZView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZView.h; sourceTree = "<group>"; };
+		95D9A9251E1F389A00CEECEE /* MZView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZView.m; sourceTree = "<group>"; };
+		95D9A9271E1F38E200CEECEE /* MZUIKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZUIKit.h; sourceTree = "<group>"; };
+		95D9A9281E1F38E200CEECEE /* MZUIKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZUIKit.m; sourceTree = "<group>"; };
+		95D9A92A1E1F3BC900CEECEE /* MZDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZDefine.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +121,11 @@
 				75FD4B7D1DF177AD004A177C /* AppDelegate.m */,
 				75FD4B7F1DF177AD004A177C /* ViewController.h */,
 				75FD4B801DF177AD004A177C /* ViewController.m */,
+				95D9A9241E1F389A00CEECEE /* MZView.h */,
+				95D9A9251E1F389A00CEECEE /* MZView.m */,
+				95D9A9271E1F38E200CEECEE /* MZUIKit.h */,
+				95D9A9281E1F38E200CEECEE /* MZUIKit.m */,
+				95D9A92A1E1F3BC900CEECEE /* MZDefine.h */,
 				75FD4BAC1DF17811004A177C /* MZKit.h */,
 				75FD4BAD1DF17811004A177C /* MZKit.m */,
 				75A2F0241DF2B20500F4E759 /* MZKit+Config.h */,
@@ -294,6 +306,8 @@
 				75FD4B7E1DF177AD004A177C /* AppDelegate.m in Sources */,
 				75A2F0261DF2B20500F4E759 /* MZKit+Config.m in Sources */,
 				75FD4B7B1DF177AD004A177C /* main.m in Sources */,
+				95D9A9261E1F389A00CEECEE /* MZView.m in Sources */,
+				95D9A9291E1F38E200CEECEE /* MZUIKit.m in Sources */,
 				95D4407E1E1205EA00EE7E59 /* UIColor+ColorType.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
